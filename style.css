@@ -1,0 +1,212 @@
+.attribution { 
+    font-size: 11px; text-align: center;
+    margin-top: 2em; 
+    color: blue;
+}
+.attribution a { 
+    color: hsl(0, 0%, 100%);
+ }
+
+ *{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+ :root{
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --Very-Dark-Blue: hsl(229, 57%, 11%);
+ }
+
+ p{
+     font-size: 14px;
+ }
+
+ body{
+     background-image: url(./images/bg-mobile.png);
+     background-repeat: no-repeat;
+     background-size: cover;
+     overflow: hidden !important;
+ }
+ .card{
+    max-width: 25rem;
+    width: 90%;
+    margin: auto;
+    margin-top: 3em;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 1em;
+ }
+ .card1{
+    background-color: var(--Dark-Blue);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: .5em;
+    border-top-right-radius: 6rem;
+    padding: 2em;
+ }
+ .card1__logo{
+   margin-bottom: 1.5em;
+ }
+.card1__svg{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+    /* hello */
+ }
+ .card1__svg img{
+     background-color: black;
+     border-radius: .5em;
+     padding: .5em;
+     width: 2.5em;
+     height: 2.25em;
+ }
+.card2{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 1em;
+    border-radius: .5em;
+    background-color: var(--Dark-Blue);
+    min-width: 268px;
+   
+}
+
+#card2__p{
+    color: hsla(243, 100%, 93%,.6);
+    margin-bottom: .5em;
+    font-size: 100%;
+}
+.card2--faint{
+    color: var(--Pale-Blue);
+}
+.amount__bar{
+    background: var(--Very-Dark-Blue);
+    border-radius: 4rem;
+    width: 90%;
+    height: 23px;
+    position: relative;
+    margin-bottom: .5em;
+}
+.amount__innerbar{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    border-radius: 4rem;
+    width: 75%;
+    height: 15px ;
+    background: linear-gradient(to right,hsl(6, 100%, 80%) ,hsl(335, 100%, 65%));
+    transform: translateX(3px);
+}
+.amount__circle{
+    background: var(--Pale-Blue);
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+    margin-right: .2em;
+}
+.amount__pop{
+    background-color: white;
+    color: var(--Dark-Blue);
+    padding: 1em;
+    max-width:10em;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    border-radius: .5em;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 110px;
+}
+.amount__pop span{  
+    color: var(--Grayish-Blue);
+    font-size: 14px;
+}
+.amount__indicator{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    color: var(--Pale-Blue);
+}
+/* the large screen media query */
+@media screen and (min-width:900px){
+    body{
+        background-image: url(./images/bg-desktop.png);
+        background-repeat: no-repeat;
+        background-color:var(--Very-Dark-Blue);  
+        background-position-y:bottom -15em;
+        background-size: cover;
+      }
+    .card{
+        width: 100%;
+        max-width: 850px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0fr 0fr;
+        place-content: center;
+        transform: translateY(4em);
+        /* position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%); */
+    }
+    .card2{
+        width: 600px;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    #card2__p{
+        width: 90%;
+    }
+    .amount__pop{
+        background-color: white;
+        color: var(--Dark-Blue);
+        padding: 1em;
+        width:10em;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: .5em;
+        position: absolute;
+        top: -39px;
+        left: 0px;
+        right: -325px;
+        margin: auto;
+    }
+    .amount__pop::after{
+        content: "";
+        position: absolute;
+        background-color: white;
+        margin-top: 2em;
+        top: 3px;
+        bottom:0;
+        right:0;
+        width: 30px;
+        height: 35px;
+        /* i have no idea what i did here but it works tho, what the heck is perspective? */
+        transform: perspective(2rem) rotateY(-65deg) translate(2.9px,-1px);
+    } 
+    .amount__bar{
+        width: 89%;
+    }
+    .attribution { 
+        transform: translateY(4em);
+    }
+}
