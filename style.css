@@ -28,6 +28,7 @@
      background-repeat: no-repeat;
      background-size: cover;
      overflow: hidden !important;
+     font-family: 'Raleway', sans-serif;
  }
  .card{
     max-width: 25rem;
@@ -125,6 +126,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     gap: .5em;
     border-radius: .5em;
     position: absolute;
